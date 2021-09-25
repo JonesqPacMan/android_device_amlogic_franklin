@@ -1,0 +1,32 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+# mount point  fstype  device                             device2                flags
+system		/system			ext4		logical
+vendor		/vendor			ext4		display="Vendor";logical
+product		/product		ext4		display="Product";logical
+odm			/odm		    ext4		display="Odm";logical
+/metadata      ext4    /dev/block/metadata                    flags=display="Metadata";backup=1
+/super_image   emmc    /dev/block/super                       flags=backup=1;display="Super"
+/boot           emmc    /dev/block/boot        flags=backup=1
+/dtbo          emmc    /dev/block/dtbo                        flags=backup=1;display="Dtbo";flashimg=1
+/recovery      emmc    /dev/block/recovery                    flags=backup=1
+/logo           emmc    /dev/block/logo        flags=backup=1;flashimg;display=Logo
+/misc             emmc     /dev/block/misc         flags=backup=1
+/env             emmc     /dev/block/env         flags=display="Env";backup=1
+/bootloader             emmc     /dev/block/bootloader         flags=display="Bootloader";backup=1
+/factory             emmc     /dev/block/factory         flags=display="Factory";backup=1
+/tee             emmc     /dev/block/tee         flags=display="Tee";backup=1
+/rsv             emmc     /dev/block/rsv         flags=display="Rsv";backup=1
+/reserved             emmc     /dev/block/reserved         flags=display="Reserved";backup=1
+/params             emmc     /dev/block/params         flags=display="Params";backup=1
+/cri_data             emmc     /dev/block/cri_data         flags=display="Cri_Data";backup=1
+/tee             emmc     /dev/block/tee         flags=display="Tee";backup=1
+/vbmeta           emmc     /dev/block/vbmeta       flags=display="Vbmeta";backup=1;flashimg=1
+/cache          ext4    /dev/block/cache       flags=backup=1
+/data           ext4    /dev/block/data
+
+# Removable storage
+/external_sd    auto    /dev/block/mmcblk1p1   flags=storage;wipeingui;removable
+/usb-otg        auto    /dev/block/sda1        flags=storage;wipeingui;removable
