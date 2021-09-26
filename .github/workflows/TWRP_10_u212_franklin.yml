@@ -49,7 +49,7 @@ jobs:
         run: |
           sudo -E apt-get clean
           sudo -E apt-get -qq update
-          sudo -E apt-get -qq install curl libstdc++6 git wget repo rsync aria2
+          sudo -E apt-get -qq install curl libstdc++6 git wget repo rsync aria2 gzip tar
           git config --global user.name "jonesqpacman"
           git config --global user.email "59949473+jonesqpacman@users.noreply.github.com"
           git clone https://gitlab.com/OrangeFox/misc/scripts --depth=1 --single-branch
