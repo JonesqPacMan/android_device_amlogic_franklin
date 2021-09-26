@@ -112,7 +112,7 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 # TWRP specific build flags
 RECOVERY_VARIANT := twrp
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_THEME := landscape_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_NO_REBOOT_BOOTLOADER := true
@@ -130,7 +130,7 @@ TW_DEFAULT_LANGUAGE := id_ID
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TARGET_USES_MKE2FS := true
-TW_DEVICE_VERSION := $(shell date '+%Y%m%d') by JonesqPacMan™
+TW_DEVICE_VERSION := $(shell date '+%Y%m%d') | JonesqPacMan™
 
 # Platform version
 PLATFORM_VERSION := 16.1.0

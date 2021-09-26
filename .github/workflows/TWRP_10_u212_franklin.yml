@@ -114,7 +114,7 @@ jobs:
       - name: Show out tree
         run: |
           cd ${{steps.info.outputs.OutFolder}}
-          sudo zip -r9 ${{env.Rec_name}}_for_${{ env.device }}_by_${{ env.Author }}.zip recovery.img
+          sudo zip -r9 ${{env.Rec_name}}_for_${{ env.device }}_by_JonesqPacMan.zip recovery.img
           tree -C -L 5
 
       - name: Upload firmware directory
@@ -128,13 +128,13 @@ jobs:
         uses: softprops/action-gh-release@master
         with:
           files: |
-            ${{steps.info.outputs.OutFolder}}/${{env.Rec_name}}_for_${{ env.device }}_by_${{ env.Author }}.zip
+            ${{steps.info.outputs.OutFolder}}/${{env.Rec_name}}_for_${{ env.device }}_by_JonesqPacMan.zip
             ${{steps.info.outputs.OutFolder}}/*.img
           name: ${{env.Rec_name}}-${{ env.device }}-${{ github.run_id }}
           tag_name: ${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}
           body: |
             ${{env.Rec_name}}-${{env.Rec_ver}} for ${{ env.device }} build at ${{ steps.info.outputs.date }}
-            Download link :https://download.fastgit.org/jonesqpacman/android_device_amlogic_franklin/releases/download/${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}/${{env.Rec_name}}_for_${{ env.device }}_by_${{ env.Author }}.zip
+            Download link :https://download.fastgit.org/jonesqpacman/android_device_amlogic_franklin/releases/download/${{ env.device }}-${{env.Rec_name}}-${{ steps.info.outputs.date }}/${{env.Rec_name}}_for_${{ env.device }}_by_JonesqPacMan.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
