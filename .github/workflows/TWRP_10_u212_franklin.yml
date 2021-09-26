@@ -111,7 +111,7 @@ jobs:
           mv index.html AIK.tar.gz
           tar -xzvf AIK.tar.gz
           cd AIK-Linux
-          cp ${{env.WorkSpace}}/out/target/product/${{ env.device }}/recovery.img .
+          cp ../recovery.img .
           chmod 777 unpackimg.sh
           chmod 777 repackimg.sh
           ./unpackimg.sh recovery.img
