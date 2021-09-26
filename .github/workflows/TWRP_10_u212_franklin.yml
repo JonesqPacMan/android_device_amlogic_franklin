@@ -104,6 +104,22 @@ jobs:
           mka recoveryimage
         shell: bash
 
+      - name: Repack & Unpack Recovery Image
+        run: |
+          cd ${{env.WorkSpace}}/out/target/product/${{ env.device }}
+          wget https://forum.xda-developers.com/attachments/aik-linux-v3-8-all-tar-gz.5300923/
+          mv index.html AIK.tar.gz
+          tar -xzvf AIK.tar.gz
+          cd AIK-Linux
+          cp ${{env.WorkSpace}}/out/target/product/${{ env.device }}/recovery.img .
+          bash unpackimg.sh recovery.img
+          touch split_img/recovery.img-tags_offset
+          echo '0xfef88100' >> split_img/recovery.img-tags_offset
+          bash repackimg.sh
+          rm ../recovery.img
+          mv image-new.img ../recovery.img
+        shell: bash
+
       - name: Get info
         id: info
         run: |
