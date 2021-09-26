@@ -134,4 +134,7 @@ TW_DEVICE_VERSION := $(shell date '+%Y%m%d') by JonesqPacMan™
 
 # Platform version
 PLATFORM_VERSION := 16.1.0
+
+# BPRB
+MAINTAINER := JonesqPacMan™
  
