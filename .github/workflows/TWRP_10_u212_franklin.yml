@@ -112,11 +112,23 @@ jobs:
           tar -xzvf AIK.tar.gz
           cd AIK-Linux
           cp ${{env.WorkSpace}}/out/target/product/${{ env.device }}/recovery.img .
-          bash unpackimg.sh recovery.img
+          chmod 777 unpackimg.sh
+          chmod 777 repackimg.sh
+          ./unpackimg.sh recovery.img
           touch split_img/recovery.img-tags_offset
+          touch split_img/recovery.img-dtb_offset
+          touch split_img/recovery.img-kernel_offset
+          touch split_img/recovery.img-ramdisk_offset
+          touch split_img/recovery.img-second_offset
+          touch split_img/recovery.img-base
           echo '0xfef88100' >> split_img/recovery.img-tags_offset
-          bash repackimg.sh
-          rm ../recovery.img
+          echo '0x00e88000' >> split_img/recovery.img-dtb_offset
+          echo '0x00008000' >> split_img/recovery.img-kernel_offset
+          echo '0xfff88000' >> split_img/recovery.img-ramdisk_offset
+          echo '0xffe88000 ' >> split_img/recovery.img-second_offset
+          echo '0x01078000' >> split_img/recovery.img-base
+          ./repackimg.sh
+          rm -rf ../recovery.img
           mv image-new.img ../recovery.img
         shell: bash
 
