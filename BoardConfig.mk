@@ -45,7 +45,7 @@ USE_OPENGL_RENDERER := true
 # Kernel (not real offset ,bypass too big problem)
 BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.dtbo_idx=0 androidboot.boot_devices=ffe07000.emmc buildvariant=user androidboot.selinux=permissive
 
-BOARD_KERNEL_IMAGE_NAME := zImage 
+BOARD_KERNEL_IMAGE_NAME := Image 
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
