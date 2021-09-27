@@ -39,8 +39,8 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Graphics
-BOARD_EGL_CFG := $(DEVICE_PATH)/egl.cfg
-USE_OPENGL_RENDERER := true
+# BOARD_EGL_CFG := $(DEVICE_PATH)/egl.cfg
+# USE_OPENGL_RENDERER := true
 
 # Kernel (not real offset ,bypass too big problem)
 BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.dtbo_idx=0 androidboot.boot_devices=ffe07000.emmc buildvariant=user androidboot.selinux=permissive
