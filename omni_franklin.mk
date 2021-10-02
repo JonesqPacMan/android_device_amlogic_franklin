@@ -33,9 +33,9 @@ PRODUCT_PACKAGES += \
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := franklin
 PRODUCT_NAME := omni_franklin
-PRODUCT_BRAND := Fiberhome
-PRODUCT_MODEL := HG680FJ
-PRODUCT_MANUFACTURER := Fiberhome
+PRODUCT_BRAND := ZTE
+PRODUCT_MODEL := B860Hv5
+PRODUCT_MANUFACTURER := ZTE
 
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \
