@@ -39,11 +39,11 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Graphics
-# BOARD_EGL_CFG := $(DEVICE_PATH)/egl.cfg
-# USE_OPENGL_RENDERER := true
+BOARD_EGL_CFG := $(DEVICE_PATH)/egl.cfg
+USE_OPENGL_RENDERER := true
 
 # Kernel (not real offset ,bypass too big problem)
-BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.dtbo_idx=0 androidboot.boot_devices=ffe07000.emmc buildvariant=user androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.dtbo_idx=0 androidboot.boot_devices=ffe07000.emmc androidboot.selinux=permissive
 
 BOARD_KERNEL_IMAGE_NAME := Image 
 BOARD_KERNEL_BASE := 0x40078000
@@ -122,7 +122,9 @@ TW_USE_NEW_MINADBD := true
 TW_USE_TOOLBOX := true
 TW_NO_BATT_PERCENT := true
 TW_NO_SCREEN_TIMEOUT := true
+TW_NO_SCREEN_BLANK := true
 TW_NO_REBOOT_BOOTLOADER := true
+TW_INCLUDE_FB2PNG := true
 TW_SKIP_COMPATIBILITY_CHECK := true
 TARGET_USES_MKE2FS := true
 TW_NO_LEGACY_PROPS := true
